@@ -1,0 +1,206 @@
+.container {
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  padding: 10px 20px 14px;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.controlBtn {
+  background: var(--btn-bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.controlBtn:hover {
+  background: var(--btn-hover);
+  color: var(--text-primary);
+}
+
+.controlBtn.active {
+  background: var(--btn-hover);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.popoverAnchor {
+  position: relative;
+}
+
+.popover {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  z-index: 200;
+  width: 340px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* Remove margin from PartyManager when inside popover */
+.popover > * {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* Column-flow grid: dots fill top-to-bottom first, creating vertical color bands */
+.grid {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 3px;
+  /* No overflow: hidden — tooltip uses position: fixed to escape clipping */
+}
+
+/* Mobile: flex-wrap so dots fill left-to-right row by row (horizontal bands) */
+.gridMobile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin: 0 auto;
+}
+
+/* Mobile: inline panels (Parties & Lean, selected voter) */
+.mobileInlinePanel {
+  margin-bottom: 10px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mobileInlinePanel > * {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.mobileVoterPanel {
+  background: var(--bg-inner);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
+
+.mobileVoterPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.mobileVoterPanelTitle {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.mobileVoterPanelClose {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+.mobileVoterRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.mobileVoterPartyLabel {
+  width: 80px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+.mobileVoterBarContainer {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-panel);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.mobileVoterBar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.2s ease;
+}
+
+.mobileVoterPct {
+  width: 34px;
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* Mobile overrides */
+@media (max-width: 600px) {
+  .container {
+    padding: 8px 12px 12px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .label {
+    font-size: 10px;
+    width: 100%;
+  }
+
+  .controls {
+    width: 100%;
+    gap: 6px;
+  }
+
+  .controlBtnHalf {
+    flex: 1;
+    text-align: center;
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+}

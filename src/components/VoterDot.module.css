@@ -1,0 +1,90 @@
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.12s ease, opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+.dot:hover {
+  transform: scale(2);
+  opacity: 1 !important;
+  z-index: 10;
+}
+
+.dot.selected {
+  transform: scale(2);
+  opacity: 1 !important;
+  z-index: 10;
+  outline: 2px solid var(--text-primary);
+  outline-offset: 1px;
+}
+
+/* Desktop: fixed-position tooltip rendered via inline style from getBoundingClientRect */
+.tooltip {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 10px 12px;
+  min-width: 180px;
+  z-index: 9999;
+  box-shadow: var(--shadow);
+  pointer-events: none;
+}
+
+.tooltipTitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tooltipRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.partyLabel {
+  width: 72px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11px;
+}
+
+.barContainer {
+  flex: 1;
+  height: 7px;
+  background: var(--bg-inner);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.2s ease;
+}
+
+.pct {
+  width: 30px;
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+/* Mobile: dots are 10px */
+@media (max-width: 600px) {
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}

@@ -1,0 +1,181 @@
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.method {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.againBtn {
+  background: var(--btn-bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.againBtn:hover {
+  background: var(--btn-hover);
+  color: var(--text-primary);
+}
+
+.winner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-inner);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.winnerLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.winnerName {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.winnerParty {
+  font-size: 13px;
+  margin-left: auto;
+  font-weight: 600;
+}
+
+.note {
+  font-size: 11px;
+  color: #ea580c;
+  background: rgba(234, 88, 12, 0.08);
+  border: 1px solid rgba(234, 88, 12, 0.2);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-bottom: 12px;
+}
+
+.chartsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.chartContainer {
+  background: var(--bg-inner);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 8px 4px;
+}
+
+.chartLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.rounds {
+  margin-top: 12px;
+  background: var(--bg-inner);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.roundsSummary {
+  font-size: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.roundsList {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.round {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.roundNum {
+  color: var(--text-muted);
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.roundElim {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+  .panel {
+    border-radius: 12px;
+    padding: 16px 14px;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 17px;
+  }
+
+  .method {
+    font-size: 11px;
+  }
+
+  .winnerName {
+    font-size: 14px;
+  }
+
+  .chartsRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .againBtn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
